@@ -15,7 +15,7 @@ const PROJECTS = [
         title: "Adad Association Website",
         description:
             "A modern platform for managing association services, members and content, deployed and actively used by the organization.",
-        stack: ["React", "Node.js"],
+        stack: ["Angular", "Node.js"],
         link: "https://adadngo.netlify.app/",
     },
     {
@@ -31,6 +31,13 @@ const PROJECTS = [
             "Food ordering application with a fast, intuitive UX, JWT-based auth and a REST API backend deployed on Render.",
         stack: ["Express", "TypeScript", "MongoDB", "JWT"],
         link: "https://talabatyv1.netlify.app/",
+    },
+    {
+        title: "InsightFlow",
+        description:
+            "Sales analytics platform that turns a business owner's sales export into a clear dashboard and plain-language recommendations, then publishes a sanitized version of the finding to a public insight feed for other businesses to learn from.",
+        stack: ["Nuxt", "Dashboard", "Data Analytics"],
+        link: "https://insightflow-o6ve.onrender.com/",
     },
 ];
 
