@@ -39,6 +39,13 @@ const PROJECTS = [
         stack: ["Nuxt", "Dashboard", "Data Analytics"],
         link: "https://insightflow-o6ve.onrender.com/",
     },
+    {
+        title: "Zentry",
+        description:
+            "Access management platform handling registration, sign-in, and role-based permissions, with a client role for self-service profiles and an admin dashboard to search, filter, and manage every account.",
+        stack: ["React", "FastAPI"],
+        link: "https://zentrym.netlify.app/",
+    },
 ];
 
 function Projects() {
