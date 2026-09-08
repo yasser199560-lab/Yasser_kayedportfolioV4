@@ -7,8 +7,8 @@ const CHANNELS = [
     {
         icon: FaEnvelope,
         label: "Email",
-        detail: "yasser199560@gmail.com",
-        href: "https://mail.google.com/mail/?view=cm&fs=1&to=yasser199560@gmail.com",
+        detail: "yasser.m.kayed@gmail.com",
+        href: "https://mail.google.com/mail/?view=cm&fs=1&to=yasser.m.kayed@gmail.com",
     },
     {
         icon: FaPhone,

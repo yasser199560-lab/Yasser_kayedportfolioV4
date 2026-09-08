@@ -99,6 +99,41 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* 3D tilt surface — pairs with the useTilt hook */
+  .tilt {
+    --tilt-glare-x: 50%;
+    --tilt-glare-y: 50%;
+    --tilt-glare-o: 0;
+    transform-style: preserve-3d;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  .tilt-glare {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: var(--tilt-glare-o);
+    transition: opacity 0.35s ease;
+    background: radial-gradient(
+      circle at var(--tilt-glare-x) var(--tilt-glare-y),
+      rgba(255, 255, 255, 0.16),
+      transparent 55%
+    );
+  }
+
+  .tilt-layer {
+    transform: translateZ(28px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tilt {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
 }
 
 @layer utilities {

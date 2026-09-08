@@ -35,7 +35,7 @@ function Footer() {
                         <FaGithub />
                     </a>
                     <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=yasser199560@gmail.com"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=yasser.m.kayed@gmail.com"
                         target="_blank"
                         rel="noreferrer"
                         aria-label="Email"

@@ -1,5 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import yasser from "../assets/images/yasser.jpg";
+import { useTilt } from "../hooks/useTilt";
+
+const HeroScene = lazy(() => import("../three/HeroScene"));
 
 const ROLES = [
     "Creative Developer",
@@ -31,6 +34,8 @@ function Hero() {
 
         return () => clearTimeout(typing);
     }, [char, index]);
+
+    const { ref: tiltRef, handleMove, handleLeave } = useTilt({ max: 9, scale: 1.015 });
 
     return (
         <section
@@ -102,24 +107,40 @@ function Hero() {
                     </div>
                 </div>
 
-                {/* RIGHT — device-frame photo card */}
+                {/* RIGHT — 3D scene + device-frame photo card */}
                 <div className="relative mx-auto w-full max-w-sm">
+                    {/* Real-time WebGL 3D scene, sits behind the photo card */}
+                    <div className="pointer-events-none absolute -inset-16 -z-10 opacity-90">
+                        <Suspense fallback={null}>
+                            <HeroScene />
+                        </Suspense>
+                    </div>
+
                     <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-[var(--color-signal)]/25 to-[var(--color-violet)]/25 blur-2xl" />
-                    <div className="relative card-surface rounded-[1.75rem] p-3 shadow-2xl">
-                        <div className="flex items-center gap-1.5 px-2 pb-3">
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
-                            <span className="ml-auto font-mono text-[10px] text-[var(--color-muted)]">
-                                yasser.dev
-                            </span>
-                        </div>
-                        <div className="rounded-xl overflow-hidden aspect-[3/4]">
-                            <img
-                                src={yasser}
-                                alt="Portrait of Yasser Mansour Kayed"
-                                className="w-full h-full object-cover"
-                            />
+
+                    <div
+                        ref={tiltRef}
+                        onMouseMove={handleMove}
+                        onMouseLeave={handleLeave}
+                        className="tilt relative card-surface rounded-[1.75rem] p-3 shadow-2xl"
+                    >
+                        <div className="tilt-glare rounded-[1.75rem]" />
+                        <div className="tilt-layer">
+                            <div className="flex items-center gap-1.5 px-2 pb-3">
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+                                <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+                                <span className="ml-auto font-mono text-[10px] text-[var(--color-muted)]">
+                                    yasser.dev
+                                </span>
+                            </div>
+                            <div className="rounded-xl overflow-hidden aspect-[3/4]">
+                                <img
+                                    src={yasser}
+                                    alt="Portrait of Yasser Mansour Kayed"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
                         </div>
                     </div>
 
