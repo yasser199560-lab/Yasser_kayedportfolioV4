@@ -26,6 +26,7 @@ const PROJECTS = [
         link: "https://insightflow-o6ve.onrender.com/",
         image: insightflowPreview,
         imageFit: "screen",
+<<<<<<< HEAD
     },
     {
         title: "Zentry",
@@ -53,7 +54,37 @@ const PROJECTS = [
         link: "https://talabatyv1.netlify.app/",
         image: talabatiPreview,
         imageFit: "screen",
+=======
+>>>>>>> eb4412b22e131a326c46154c0514a8b9e241e94e
     },
+    {
+        title: "Zentry",
+        description:
+            "Access management platform handling registration, sign-in, and role-based permissions, with a client role for self-service profiles and an admin dashboard to search, filter, and manage every account.",
+        stack: ["React", "FastAPI"],
+        link: "https://zentrym.netlify.app/",
+        image: zentryPreview,
+        imageFit: "screen",
+    },
+    {
+        title: "Travelia",
+        description:
+            "Travel guide & booking platform with a clean UI, itinerary and listing management, and a smooth end-to-end booking experience.",
+        stack: ["Next.js", "React 19", "MongoDB"],
+        link: "https://travelia-rho.vercel.app/",
+        image: travelialPreview,
+        imageFit: "screen",
+    },
+    {
+        title: "Talabaty",
+        description:
+            "Food ordering application with a fast, intuitive UX, JWT-based auth and a REST API backend deployed on Render.",
+        stack: ["Express", "TypeScript", "MongoDB", "JWT"],
+        link: "https://talabatyv1.netlify.app/",
+        image: talabatiPreview,
+        imageFit: "screen",
+    }
+    
 ];
 
 function Projects() {
